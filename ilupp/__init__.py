@@ -108,7 +108,7 @@ def solve(A, b, rtol=1e-4, atol=1e-4, max_iter=500, threshold=0.1, fill_in=None,
             params.fill_in = fill_in
 
     Ad, Ai, Ap, Ao = _matrix_fields(A)
-    b = np.ascontiguousarray(b, dtype=np.float_)
+    b = np.ascontiguousarray(b, dtype=np.float64)
 
     sol, iter, rtol_out, atol_out = _ilupp.solve(
             Ad, Ai, Ap, Ao, b, rtol, atol, max_iter, params)
